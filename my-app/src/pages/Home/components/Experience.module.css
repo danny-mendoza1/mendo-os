@@ -1,0 +1,76 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-4);
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.role {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(var(--color-foreground));
+}
+
+.company {
+  color: hsl(var(--color-primary));
+  font-family: var(--font-mono);
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: hsl(var(--color-muted-foreground));
+}
+
+.description {
+  color: hsl(var(--color-muted-foreground));
+  margin-bottom: var(--spacing-4);
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-6) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.highlightItem {
+  position: relative;
+  padding-left: var(--spacing-6);
+  color: hsl(var(--color-muted-foreground));
+  font-size: 0.95rem;
+}
+
+.highlightItem::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: hsl(var(--color-primary));
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: auto;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: hsl(var(--color-primary) / 0.1);
+  color: hsl(var(--color-primary));
+  border-radius: var(--radius-full);
+  border: 1px solid hsl(var(--color-primary) / 0.2);
+}
