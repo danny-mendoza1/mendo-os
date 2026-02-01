@@ -1,88 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-@import url('./animations.css');
-@import url('./breakpoints.css');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("./animations.css");
+@import url("./breakpoints.css");
 
 :root {
   /* Primary Colors */
-  --color-primary: 174 72% 50%;           /* Teal/Cyan #2dd4bf */
+  --color-primary: 174 72% 50%; /* Teal/Cyan #2dd4bf */
   --color-primary-foreground: 222 47% 6%; /* Dark text on primary */
-  
+
   /* Accent Colors */
-  --color-accent: 262 83% 65%;            /* Purple */
+  --color-accent: 262 83% 65%; /* Purple */
   --color-accent-foreground: 210 40% 98%; /* Light text on accent */
-  
+
   /* Background Colors */
-  --color-background: 222 47% 6%;         /* Very dark blue #020617 */
-  --color-foreground: 210 40% 98%;        /* Near white text */
-  
+  --color-background: 222 47% 6%; /* Very dark blue #020617 */
+  --color-foreground: 210 40% 98%; /* Near white text */
+
   /* Surface/Card Colors */
-  --color-card: 222 47% 8%;               /* Dark blue-gray #0f172a */
+  --color-card: 222 47% 8%; /* Dark blue-gray #0f172a */
   --color-card-foreground: 210 40% 98%;
-  
+
   /* Secondary Colors */
-  --color-secondary: 222 30% 14%;         /* Lighter dark blue */
+  --color-secondary: 222 30% 14%; /* Lighter dark blue */
   --color-secondary-foreground: 210 40% 90%;
-  
+
   /* Muted Colors */
-  --color-muted: 222 30% 12%;             /* Muted background */
+  --color-muted: 222 30% 12%; /* Muted background */
   --color-muted-foreground: 215 20% 70%;
-  
+
   /* Border & Input */
   --color-border: 222 30% 16%;
   --color-input: 222 30% 16%;
-  --color-ring: 174 72% 50%;              /* Focus ring = primary */
-  
+  --color-ring: 174 72% 50%; /* Focus ring = primary */
+
   /* Semantic Colors */
-  --color-success: 142 72% 45%;           /* Green */
+  --color-success: 142 72% 45%; /* Green */
   --color-success-foreground: 210 40% 98%;
-  
-  --color-warning: 38 92% 55%;            /* Amber */
+
+  --color-warning: 38 92% 55%; /* Amber */
   --color-warning-foreground: 222 47% 6%;
-  
-  --color-destructive: 0 72% 55%;         /* Red */
+
+  --color-destructive: 0 72% 55%; /* Red */
   --color-destructive-foreground: 210 40% 98%;
-  
+
   /* Popover */
   --color-popover: 222 47% 10%;
   --color-popover-foreground: 210 40% 98%;
-  
+
   /* Sidebar */
   --color-sidebar-background: 222 47% 7%;
   --color-sidebar-foreground: 210 40% 90%;
   --color-sidebar-border: 222 30% 16%;
-  
+
   /* Border Radius */
-  --radius-sm: 0.5rem;    /* 8px */
-  --radius-md: 0.625rem;  /* 10px */
-  --radius-lg: 0.75rem;   /* 12px */
-  --radius-xl: 1rem;      /* 16px */
-  
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 0.625rem; /* 10px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+
   /* Spacing Scale (4px based) */
-  --spacing-1: 0.25rem;   /* 4px */
-  --spacing-2: 0.5rem;    /* 8px */
-  --spacing-3: 0.75rem;   /* 12px */
-  --spacing-4: 1rem;      /* 16px */
-  --spacing-5: 1.25rem;   /* 20px */
-  --spacing-6: 1.5rem;    /* 24px */
-  --spacing-8: 2rem;      /* 32px */
-  --spacing-12: 3rem;     /* 48px */
-  --spacing-16: 4rem;     /* 64px */
-  
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-5: 1.25rem; /* 20px */
+  --spacing-6: 1.5rem; /* 24px */
+  --spacing-8: 2rem; /* 32px */
+  --spacing-12: 3rem; /* 48px */
+  --spacing-16: 4rem; /* 64px */
+
   /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-  
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
-  
+
   /* Glow Shadows (for primary elements) */
   --shadow-glow-primary: 0 0 40px hsl(174 72% 50% / 0.15), 0 0 80px hsl(174 72% 50% / 0.15);
   --shadow-glow-accent: 0 0 40px hsl(262 83% 65% / 0.15), 0 0 80px hsl(262 83% 65% / 0.15);
-  
+
   /* Transitions */
   --transition-fast: 150ms;
   --transition-base: 200ms;
@@ -120,7 +120,12 @@ body {
 }
 
 /* Typography Base */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   color: hsl(var(--color-foreground));
@@ -315,22 +320,20 @@ select {
   margin-bottom: var(--spacing-8);
 }
 
-
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
   }
-  
+
   h2 {
     font-size: 1.5rem;
   }
-  
+
   .container {
     padding-left: var(--spacing-4);
     padding-right: var(--spacing-4);
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   *,

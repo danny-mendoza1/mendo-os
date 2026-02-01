@@ -1,4 +1,3 @@
-
 .container {
   scroll-margin-top: 100px;
 }
@@ -10,15 +9,16 @@
   gap: var(--spacing-6);
 }
 
-
 .projectCard {
   height: 100%;
   display: flex;
   flex-direction: column;
-  
 
   cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .projectCard:hover {
@@ -26,7 +26,6 @@
   box-shadow: var(--shadow-glow-primary);
   border-color: hsl(var(--color-primary) / 0.5);
 }
-
 
 .header {
   margin-bottom: var(--spacing-4);
@@ -52,9 +51,8 @@
   color: hsl(var(--color-muted-foreground));
   line-height: 1.6;
   margin-bottom: var(--spacing-6);
-  flex-grow: 1; 
+  flex-grow: 1;
 }
-
 
 .footer {
   display: flex;
@@ -82,12 +80,10 @@
   transition: all var(--transition-base);
 }
 
-
 .projectCard:hover .arrow {
   opacity: 1;
   transform: translateX(0);
 }
-
 
 .disabledCard {
   opacity: 0.6;
@@ -96,13 +92,11 @@
   filter: grayscale(0.6);
 }
 
-
 .disabledCard:hover {
   transform: none;
   box-shadow: none;
   border-color: hsl(var(--color-border));
 }
-
 
 .disabledCard:hover .arrow {
   opacity: 0;

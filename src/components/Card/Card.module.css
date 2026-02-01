@@ -11,7 +11,9 @@
 
 .glassCard:hover {
   border-color: hsl(var(--color-primary) / 0.3);
-  box-shadow: var(--shadow-2xl), 0 0 20px hsl(var(--color-primary) / 0.1);
+  box-shadow:
+    var(--shadow-2xl),
+    0 0 20px hsl(var(--color-primary) / 0.1);
 }
 
 /* Fallback for browsers without backdrop-filter support */

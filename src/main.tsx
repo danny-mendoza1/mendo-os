@@ -7,8 +7,8 @@ import "./styles/animations.css";
 
 // Disable browser's automatic scroll restoration to prevent race condition with React Router
 // This ensures our useScrollToTop hook has full control over scroll position
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
 }
 
 createRoot(document.getElementById("root")!).render(
@@ -16,5 +16,5 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 );

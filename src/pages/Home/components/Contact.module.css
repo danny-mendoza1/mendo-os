@@ -33,18 +33,18 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-3);
-  
+
   background-color: hsl(var(--color-primary) / 0.1);
   color: hsl(var(--color-primary));
   border: 2px solid hsl(var(--color-primary));
-  
+
   padding: var(--spacing-4) var(--spacing-6);
   border-radius: var(--radius-lg);
-  
+
   font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 600;
-  
+
   transition: all var(--transition-base);
   text-decoration: none;
 }
@@ -60,17 +60,17 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-3);
-  
+
   background-color: hsl(var(--color-card));
   color: hsl(var(--color-foreground));
   border: 1px solid hsl(var(--color-border));
-  
+
   padding: var(--spacing-3) var(--spacing-5);
   border-radius: var(--radius-md);
-  
+
   font-size: 0.95rem;
   font-weight: 500;
-  
+
   transition: all var(--transition-base);
   text-decoration: none;
 }
@@ -97,21 +97,21 @@
   .content {
     gap: var(--spacing-6);
   }
-  
+
   .description {
     font-size: 1rem;
   }
-  
+
   .contactMethods {
     flex-direction: column;
     max-width: 500px;
   }
-  
+
   .emailButton {
     font-size: 0.875rem;
     padding: var(--spacing-3) var(--spacing-4);
   }
-  
+
   .socialLink {
     font-size: 0.875rem;
   }

@@ -4,7 +4,7 @@ The source code for my personal portfolio, accessible at [wmendoza.dev](https://
 
 ## Overview
 
-This portfolio was built to showcase my transition from Support Engineering to Full-Stack Development. It treats the portfolio as a case study in itself—featuring responsive design, CI/CD pipelines, and rigorous type safety.
+This portfolio was built to showcase my transition from Support Engineering to Full-Stack Development. It treats the portfolio as a case study in itself—featuring responsive design, and rigorous type safety.
 
 ## Tech Stack
 
