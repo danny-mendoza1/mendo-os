@@ -73,7 +73,6 @@
   margin-top: var(--spacing-4);
 }
 
-/* TODO:  might want to move these to a generic Button component later */
 .primaryButton {
   background-color: hsl(var(--color-primary) / 0.1);
   color: hsl(var(--color-primary));

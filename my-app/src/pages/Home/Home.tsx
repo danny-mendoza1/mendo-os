@@ -1,6 +1,7 @@
 import { About } from './components/About'
 import { Experience } from './components/Experience'
 import { Projects } from './components/Projects'
+import { Contact } from './components/Contact'
 import styles from './Home.module.css'
 
 export const Home = () => {
@@ -9,6 +10,7 @@ export const Home = () => {
             <About />
             <Experience />
             <Projects />
+            <Contact />
         </div>
     )
 }

@@ -12,13 +12,7 @@ function App() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="/projects/financial-tool" element={<FinancialTool />} />
-
-        {/* Future routes */}
-
       </Route>
-
-      {/* TODO: OS simulation outside mainlayout as full screen is needed */}
-
     </Routes>
   );
 }
