@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 
-export const Header = () => {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Close menu when clicking a link
@@ -12,25 +12,24 @@ export const Header = () => {
   // Handle escape key to close menu
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         setIsMenuOpen(false);
       }
     };
 
     if (isMenuOpen) {
-      document.addEventListener('keydown', handleEscape);
+      document.addEventListener("keydown", handleEscape);
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [isMenuOpen]);
 
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: "#experience", label: "Experience" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -40,7 +39,6 @@ export const Header = () => {
           MENDOZA.DEV
         </a>
 
-        {/* Desktop Navigation */}
         <nav className={styles.desktopNav}>
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className={styles.navLink}>
@@ -49,15 +47,13 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* Mobile Hamburger Button */}
         <button
           className={styles.hamburger}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? (
-            // Close icon (X)
             <svg
               width="24"
               height="24"
@@ -72,7 +68,6 @@ export const Header = () => {
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           ) : (
-            // Hamburger icon (☰)
             <svg
               width="24"
               height="24"
@@ -91,8 +86,7 @@ export const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu - Slides down below header */}
-      <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ''}`}>
+      <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""}`}>
         {navLinks.map((link) => (
           <a
             key={link.href}
@@ -106,4 +100,4 @@ export const Header = () => {
       </nav>
     </header>
   );
-};
+}

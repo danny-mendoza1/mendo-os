@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import styles from "./MainLayout.module.css";
 import { Header } from "../components/Header/Header";
 
-export const MainLayout = () => {
+export function MainLayout() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.paper}>
@@ -13,4 +13,4 @@ export const MainLayout = () => {
       </div>
     </div>
   );
-};
+}

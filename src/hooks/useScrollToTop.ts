@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-export const useScrollToTop = () => {
+export function useScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export const useScrollToTop = () => {
 
           window.scrollTo({
             top: offsetPosition,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         }
       }, 0);
@@ -27,8 +27,8 @@ export const useScrollToTop = () => {
       window.scrollTo({
         top: 0,
         left: 0,
-        behavior: 'instant',
+        behavior: "instant",
       });
     }
   }, [pathname, hash]);
-};
+}

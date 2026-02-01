@@ -3,20 +3,19 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
-  
+
   padding: var(--spacing-3) var(--spacing-6);
   border-radius: var(--radius-md);
-  
+
   font-family: var(--font-mono);
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
-  
+
   transition: all var(--transition-base);
   cursor: pointer;
   border: none;
 }
-
 
 .primary {
   background-color: hsl(var(--color-primary) / 0.1);
@@ -29,7 +28,6 @@
   transform: translateY(-2px);
   box-shadow: var(--shadow-glow-primary);
 }
-
 
 .secondary {
   background-color: transparent;
@@ -44,7 +42,6 @@
 .secondary:hover {
   color: hsl(var(--color-primary));
 }
-
 
 .outline {
   background-color: hsl(var(--color-card));
@@ -64,7 +61,7 @@
   .button {
     font-size: 0.875rem;
   }
-  
+
   .primary {
     padding: var(--spacing-3) var(--spacing-4);
   }

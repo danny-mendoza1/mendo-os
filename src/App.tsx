@@ -1,8 +1,41 @@
+import { lazy, Suspense } from "react";
 import { MainLayout } from "./layouts/MainLayout";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home/Home";
-import { FinancialTool } from "./pages/Projects/FinancialTool/FinancialTool";
 import { useScrollToTop } from "./hooks/useScrollToTop";
+
+const Home = lazy(() => import("./pages/Home/Home").then((module) => ({ default: module.Home })));
+const FinancialTool = lazy(() =>
+  import("./pages/Projects/FinancialTool/FinancialTool").then((module) => ({
+    default: module.FinancialTool,
+  }))
+);
+
+// Loading fallback component
+function PageLoader() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "60vh",
+        color: "hsl(var(--color-muted-foreground))",
+      }}
+    >
+      <div style={{ textAlign: "center" }}>
+        <div
+          style={{
+            fontSize: "2rem",
+            marginBottom: "1rem",
+            animation: "pulse 2s ease-in-out infinite",
+          }}
+        >
+          Loading...
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   useScrollToTop();
@@ -10,8 +43,22 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<Home />} />
-        <Route path="/projects/financial-tool" element={<FinancialTool />} />
+        <Route
+          index
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/projects/financial-tool"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <FinancialTool />
+            </Suspense>
+          }
+        />
       </Route>
     </Routes>
   );

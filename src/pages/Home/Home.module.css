@@ -15,7 +15,6 @@
   gap: var(--spacing-4);
 }
 
-
 .sectionTitle::after {
   content: "";
   height: 1px;

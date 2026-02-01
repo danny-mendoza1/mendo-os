@@ -1,4 +1,4 @@
-@import url('../../../styles/animations.css');
+@import url("../../../styles/animations.css");
 
 .container {
   max-width: 1000px;
@@ -40,10 +40,7 @@
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 0;
-  background: linear-gradient(135deg, 
-    hsl(var(--color-foreground)), 
-    hsl(var(--color-primary))
-  );
+  background: linear-gradient(135deg, hsl(var(--color-foreground)), hsl(var(--color-primary)));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -194,7 +191,6 @@
   font-size: 1.25rem;
 }
 
-
 .codeBlock {
   background: #0f172a;
   padding: var(--spacing-6);
@@ -206,7 +202,6 @@
   line-height: 1.6;
   color: #e2e8f0;
 }
-
 
 .adrGrid {
   display: grid;
@@ -308,33 +303,37 @@
 
 .stepItem {
   display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+li.stepItem {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--spacing-2);
   padding: var(--spacing-3) 0;
 }
 
-.stepItem:not(:last-child) {
+li.stepItem:not(:last-child) {
   border-bottom: 1px solid hsl(var(--color-border) / 0.5);
 }
 
-/* For file paths in Testing Strategy */
-.stepItem > span:first-child {
+li.stepItem > span:first-child {
   font-weight: 600;
   color: hsl(var(--color-primary));
   font-family: var(--font-mono);
   font-size: 0.9rem;
 }
 
-/* For descriptions in Testing Strategy */
-.stepItem > span:last-child {
+li.stepItem > span:last-child {
   color: hsl(var(--color-muted-foreground));
   line-height: 1.6;
   padding-left: var(--spacing-4);
   position: relative;
 }
 
-.stepItem > span:last-child::before {
+li.stepItem > span:last-child::before {
   content: "→";
   position: absolute;
   left: 0;
@@ -355,99 +354,99 @@
     padding-left: var(--spacing-4);
     padding-right: var(--spacing-4);
   }
-  
+
   /* Header Section */
   .headerTop {
     flex-direction: column;
     align-items: stretch;
     gap: var(--spacing-4);
   }
-  
+
   .githubButton {
     width: 100%;
     justify-content: center;
   }
-  
+
   .title {
     font-size: 1.75rem;
   }
-  
+
   .summary {
     font-size: 1rem;
   }
-  
+
   /* Metrics Grid - 2 columns then 1 */
   .metricsGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-6) var(--spacing-4);
   }
-  
+
   .metric:last-child {
     grid-column: 1 / -1;
   }
-  
+
   /* Algorithm Visualization */
   .algoVisual {
     grid-template-columns: 1fr;
   }
-  
+
   /* CI/CD and ADR Grids */
   .ciGrid,
   .adrGrid {
     grid-template-columns: 1fr;
     gap: var(--spacing-4);
   }
-  
+
   /* CI/CD Header - stack icon and title */
   .ciHeader {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-2);
   }
-  
+
   /* Section Titles */
   .sectionTitle {
     font-size: 1.5rem;
     flex-wrap: wrap;
   }
-  
+
   /* Text Blocks */
   .textBlock {
     font-size: 1rem;
   }
-  
+
   /* Code Blocks */
   .codeBlock {
     font-size: 0.75rem;
     padding: var(--spacing-4);
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Browser Demo */
   .iframe {
     height: 500px;
   }
-  
+
   .browserHeader {
     padding: var(--spacing-2);
   }
-  
+
   .urlBar {
     font-size: 0.65rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  
+
   /* Step List Items - more spacing on mobile */
   .stepItem {
     padding: var(--spacing-4) 0;
   }
-  
+
   .stepItem > span:first-child {
     font-size: 0.85rem;
   }
-  
+
   .stepItem > span:last-child {
     font-size: 0.85rem;
   }

@@ -3,7 +3,7 @@ import homeStyles from "../../../pages/Home/Home.module.css";
 import { experience } from "../../../data/resume";
 import { Card } from "../../../components/Card/Card";
 
-export const Experience = () => {
+export function Experience() {
   return (
     <section id="experience" className="animate-fade-in-up delay-200">
       <h2 className={homeStyles.sectionTitle}>
@@ -47,4 +47,4 @@ export const Experience = () => {
       </div>
     </section>
   );
-};
+}
