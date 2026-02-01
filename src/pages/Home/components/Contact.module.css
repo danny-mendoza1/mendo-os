@@ -1,0 +1,118 @@
+.container {
+  scroll-margin-top: 100px;
+}
+
+.content {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-8);
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: hsl(var(--color-muted-foreground));
+  max-width: 900px;
+}
+
+.contactMethods {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-4);
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.emailButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+
+  background-color: hsl(var(--color-primary) / 0.1);
+  color: hsl(var(--color-primary));
+  border: 2px solid hsl(var(--color-primary));
+
+  padding: var(--spacing-4) var(--spacing-6);
+  border-radius: var(--radius-lg);
+
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.emailButton:hover {
+  background-color: hsl(var(--color-primary) / 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-3);
+
+  background-color: hsl(var(--color-card));
+  color: hsl(var(--color-foreground));
+  border: 1px solid hsl(var(--color-border));
+
+  padding: var(--spacing-3) var(--spacing-5);
+  border-radius: var(--radius-md);
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  background-color: hsl(var(--color-card) / 0.8);
+  border-color: hsl(var(--color-primary) / 0.5);
+  color: hsl(var(--color-primary));
+  transform: translateY(-1px);
+}
+
+.resume {
+  margin-top: var(--spacing-6);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid hsl(var(--color-border));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    gap: var(--spacing-6);
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .contactMethods {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .emailButton {
+    font-size: 0.875rem;
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  .socialLink {
+    font-size: 0.875rem;
+  }
+}

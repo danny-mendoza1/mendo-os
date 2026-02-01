@@ -1,0 +1,142 @@
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background-color: hsl(var(--color-card) / 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid hsl(var(--color-border));
+  padding: var(--spacing-4) var(--spacing-8);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  animation: slideDown 0.6s ease-out 0.5s backwards;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: hsl(var(--color-primary));
+  text-decoration: none;
+  transition: color var(--transition-base);
+  z-index: 51;
+}
+
+.logo:hover {
+  color: hsl(var(--color-primary) / 0.8);
+}
+
+.desktopNav {
+  display: flex;
+  gap: var(--spacing-6);
+  align-items: center;
+}
+
+.navLink {
+  color: hsl(var(--color-muted-foreground));
+  text-decoration: none;
+  transition: color var(--transition-base);
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: hsl(var(--color-primary));
+}
+
+.hamburger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+
+  color: hsl(var(--color-foreground));
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-2);
+
+  transition: color var(--transition-base);
+  z-index: 51;
+}
+
+.hamburger:hover {
+  color: hsl(var(--color-primary));
+}
+
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  gap: var(--spacing-1);
+
+  background-color: hsl(var(--color-card));
+  border-bottom: 1px solid hsl(var(--color-border));
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  transition:
+    max-height 0.3s ease-out,
+    opacity 0.3s ease-out;
+}
+
+.mobileMenuOpen {
+  display: flex;
+  max-height: 300px;
+  opacity: 1;
+  padding: var(--spacing-2) var(--spacing-4) var(--spacing-4);
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: var(--spacing-3) var(--spacing-4);
+
+  color: hsl(var(--color-foreground));
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.125rem;
+
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.mobileNavLink:hover {
+  background-color: hsl(var(--color-primary) / 0.1);
+  color: hsl(var(--color-primary));
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .toolbar {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  /* Hide desktop nav on mobile */
+  .desktopNav {
+    display: none;
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop - hide mobile menu by default */
+@media (min-width: 769px) {
+  .mobileMenu {
+    display: none;
+  }
+}
