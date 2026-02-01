@@ -1,0 +1,308 @@
+@import url('../../../styles/animations.css');
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: var(--spacing-16);
+}
+
+.header {
+  margin-bottom: var(--spacing-12);
+}
+
+.tagline {
+  color: hsl(var(--color-primary));
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-4);
+  background: linear-gradient(to right, #fff, hsl(var(--color-muted-foreground)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.summary {
+  font-size: 1.25rem;
+  color: hsl(var(--color-muted-foreground));
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-8);
+  border-top: 1px solid hsl(var(--color-border));
+  border-bottom: 1px solid hsl(var(--color-border));
+  padding: var(--spacing-6) 0;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsl(var(--color-foreground));
+}
+
+.metricLabel {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: hsl(var(--color-muted-foreground));
+  margin-top: var(--spacing-1);
+}
+
+.demoSection {
+  margin-bottom: var(--spacing-16);
+}
+
+.browserHeader {
+  background: hsl(var(--color-muted));
+  padding: var(--spacing-3);
+  border-bottom: 1px solid hsl(var(--color-border));
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.urlBar {
+  background: hsl(var(--color-background));
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: hsl(var(--color-muted-foreground));
+  flex-grow: 1;
+  font-family: var(--font-mono);
+  opacity: 0.7;
+}
+
+.iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  background: white;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-6);
+  color: hsl(var(--color-foreground));
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.contentBlock {
+  margin-bottom: var(--spacing-16);
+}
+
+.textBlock {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: hsl(var(--color-muted-foreground));
+  margin-bottom: var(--spacing-6);
+  max-width: 800px;
+}
+
+.algoVisual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-6);
+  margin: var(--spacing-8) 0;
+}
+
+.algoCard {
+  background: hsl(var(--color-card));
+  border: 1px solid hsl(var(--color-border));
+  padding: var(--spacing-6);
+  border-radius: var(--radius-md);
+}
+
+.algoTitle {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-4);
+  display: block;
+}
+
+.barContainer {
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  gap: 4px;
+  margin-bottom: var(--spacing-4);
+}
+
+.bar {
+  flex: 1;
+  background: hsl(var(--color-primary) / 0.2);
+  border-radius: 2px;
+}
+
+.bar.highlight {
+  background: hsl(var(--color-primary));
+}
+
+.algoStat {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+
+.codeBlock {
+  background: #0f172a;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  border: 1px solid hsl(var(--color-border));
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+
+.adrGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.adrCard {
+  background: hsl(var(--color-card));
+  border: 1px solid hsl(var(--color-border));
+  padding: var(--spacing-6);
+  border-radius: var(--radius-md);
+  transition: transform 0.2s;
+}
+
+.adrCard:hover {
+  border-color: hsl(var(--color-primary) / 0.5);
+  transform: translateY(-2px);
+}
+
+.adrHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-4);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: hsl(var(--color-muted-foreground));
+}
+
+.adrTitle {
+  font-weight: 700;
+  color: hsl(var(--color-foreground));
+  margin-bottom: var(--spacing-2);
+}
+
+.adrStatus {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: hsl(142 76% 36% / 0.2);
+  color: hsl(142 76% 36%);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.ciGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-8);
+}
+
+.ciCard {
+  background: hsl(var(--color-card) / 0.5); /* Slightly transparent */
+  border: 1px solid hsl(var(--color-border));
+  padding: var(--spacing-6);
+}
+
+.ciHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+  font-weight: 700;
+  color: hsl(var(--color-foreground));
+  font-size: 1.1rem;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: hsl(var(--color-primary) / 0.1);
+  border-radius: 6px;
+  color: hsl(var(--color-primary));
+}
+
+.ciDescription {
+  font-size: 0.9rem;
+  color: hsl(var(--color-muted-foreground));
+  margin-bottom: var(--spacing-4);
+  line-height: 1.5;
+}
+
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  background: hsl(var(--color-background));
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  border: 1px solid hsl(var(--color-border));
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: hsl(var(--color-muted-foreground));
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.check {
+  color: hsl(var(--color-success, 142 76% 36%));
+  font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .algoVisual {
+    grid-template-columns: 1fr;
+  }
+}
