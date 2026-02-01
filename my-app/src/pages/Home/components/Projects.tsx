@@ -45,7 +45,6 @@ export const Projects = () => {
                   <h3 className={styles.title}>{project.title}</h3>
                   <div className={styles.tagline}>{project.tagline}</div>
                 </div>
-                {/* TODO: Add an icon here*/}
                 {project.comingSoon && (
                   <span className={styles.badge}>Coming Soon</span>
                 )}

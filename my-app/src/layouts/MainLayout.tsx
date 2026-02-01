@@ -15,6 +15,7 @@ export const MainLayout = () => {
                         <a href="#about" className="text-muted hover:text-primary transition">About</a>
                         <a href="#experience" className="text-muted hover:text-primary transition">Experience</a>
                         <a href="#projects" className="text-muted hover:text-primary transition">Projects</a>
+                        <a href="#contact" className="text-muted hover:text-primary transition">Contact</a>
                     </nav>
                 </header>
 

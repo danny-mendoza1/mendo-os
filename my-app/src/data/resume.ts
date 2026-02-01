@@ -4,7 +4,7 @@ import type { ExperienceItem, ProjectItem } from "./types";
 export const personalInfo = {
   name: "Walter Mendoza",
   title: "Full Stack Software Engineer",
-  email: "email@email.com",
+  email: "walter@wmendoza.dev",
   github: "https://github.com/danny-mendoza1",
   linkedin: "https://linkedin.com/in/walterdmendoza",
   about: "Full Stack Software Engineer with deep expertise in distributed systems debugging, API integration, and internal tooling. Proven track record of reverse-engineering undocumented environments to unblock enterprise integrations and contributing production code to core Rails monoliths.",

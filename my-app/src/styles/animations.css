@@ -1,4 +1,4 @@
-
+/* Core animations used in the portfolio */
 
 @keyframes fadeIn {
   from {
@@ -9,39 +9,7 @@
   }
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-@keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -63,152 +31,7 @@
   }
 }
 
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes scaleOut {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-}
-
-
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 40px hsl(174 72% 50% / 0.15), 0 0 80px hsl(174 72% 50% / 0.15);
-  }
-  50% {
-    opacity: 0.8;
-    box-shadow: 0 0 60px hsl(174 72% 50% / 0.25), 0 0 100px hsl(174 72% 50% / 0.25);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-@keyframes glowPulse {
-  0%, 100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.2);
-  }
-}
-
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.3);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-
-@keyframes accordionDown {
-  from {
-    height: 0;
-    opacity: 0;
-  }
-  to {
-    height: var(--accordion-height);
-    opacity: 1;
-  }
-}
-
-@keyframes accordionUp {
-  from {
-    height: var(--accordion-height);
-    opacity: 1;
-  }
-  to {
-    height: 0;
-    opacity: 0;
-  }
-}
-
-
+/* Animation utility classes */
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out;
 }
@@ -217,38 +40,7 @@
   animation: fadeInUp 0.5s ease-out;
 }
 
-.animate-slide-up {
-  animation: slideUp 0.5s ease-out;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.3s ease-out;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 2s ease-in-out infinite;
-}
-
-.animate-pulse {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite;
-  background: linear-gradient(
-    90deg,
-    hsl(var(--color-muted)) 0%,
-    hsl(var(--color-muted-foreground) / 0.2) 50%,
-    hsl(var(--color-muted)) 100%
-  );
-  background-size: 200% 100%;
-}
-
-
+/* Animation delay utilities */
 .delay-100 {
   animation-delay: 100ms;
 }
@@ -269,33 +61,10 @@
   animation-delay: 500ms;
 }
 
-
-.duration-fast {
-  animation-duration: 150ms;
-}
-
-.duration-normal {
-  animation-duration: 300ms;
-}
-
-.duration-slow {
-  animation-duration: 500ms;
-}
-
-.duration-slower {
-  animation-duration: 1s;
-}
-
-
+/* Accessibility: Respect user preferences */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-in,
-  .animate-fade-in-up,
-  .animate-slide-up,
-  .animate-scale-in,
-  .animate-pulse-glow,
-  .animate-pulse,
-  .animate-spin,
-  .animate-shimmer {
+  .animate-fade-in-up {
     animation: none;
     opacity: 1;
     transform: none;
