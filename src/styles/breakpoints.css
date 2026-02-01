@@ -1,0 +1,30 @@
+/**
+ * Responsive Breakpoints
+ * 
+ * Standard breakpoints used across the application.
+ * Always use these variables for consistency.
+ */
+
+:root {
+  /* Mobile devices - phones in portrait mode */
+  --breakpoint-mobile: 768px;
+  
+  /* Tablet devices - tablets and small laptops */
+  --breakpoint-tablet: 1024px;
+  
+  /* Desktop devices - standard desktops */
+  --breakpoint-desktop: 1280px;
+  
+  /* Large desktop - wide screens */
+  --breakpoint-wide: 1536px;
+}
+
+/**
+ * Usage example:
+ * 
+ * @media (max-width: 768px) {
+ *   // Mobile styles
+ * }
+ * 
+ * Note: We use 768px as the primary mobile breakpoint throughout the app.
+ */
