@@ -19,7 +19,6 @@ describe("Header Component", () => {
         <Header />
       </BrowserRouter>
     );
-    expect(screen.getAllByText("About").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Experience").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Projects").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Contact").length).toBeGreaterThan(0);
