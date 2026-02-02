@@ -63,13 +63,21 @@
   margin-top: auto;
 }
 
-.techStack {
+.tags {
   display: flex;
-  gap: var(--spacing-2);
   flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: auto;
+}
+
+.tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: hsl(var(--color-muted-foreground));
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: hsl(var(--color-primary) / 0.1);
+  color: hsl(var(--color-primary));
+  border-radius: var(--radius-full);
+  border: 1px solid hsl(var(--color-primary) / 0.2);
 }
 
 .arrow {
