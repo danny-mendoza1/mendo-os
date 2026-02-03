@@ -47,8 +47,19 @@ export function Projects() {
               <p className={styles.description}>{project.description}</p>
 
               <div className={styles.footer}>
-                <div className={styles.techStack}>{project.techStack.join("  •  ")}</div>
-                <span className={styles.arrow}>→</span>
+                <div className={styles.tags}>
+                  {project.techStack.map((tech) => (
+                    <span key={tech} className={styles.tag}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {!project.comingSoon && (
+                  <span className={styles.viewDetails}>
+                    View Details <span className={styles.arrowLarge}>→</span>
+                  </span>
+                )}
               </div>
             </Card>
           </div>
