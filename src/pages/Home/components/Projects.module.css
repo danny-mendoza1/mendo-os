@@ -133,7 +133,6 @@
   border-color: hsl(var(--color-border));
 }
 
-
 .badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -148,4 +147,3 @@
   border: 1px solid hsl(var(--color-border));
   margin-left: auto;
 }
-
