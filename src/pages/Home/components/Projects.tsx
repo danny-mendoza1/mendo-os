@@ -55,7 +55,11 @@ export function Projects() {
                   ))}
                 </div>
 
-                <span className={styles.arrow}>→</span>
+                {!project.comingSoon && (
+                  <span className={styles.viewDetails}>
+                    View Details <span className={styles.arrowLarge}>→</span>
+                  </span>
+                )}
               </div>
             </Card>
           </div>

@@ -11,22 +11,20 @@ export function About() {
         <h1 className={styles.title}>
           {personalInfo.name}.
           <br />
-          <span className={styles.highlight}>I debug the impossible.</span>
+          <span className={styles.highlight}>The Forensic Debugger.</span>
         </h1>
         <p className={styles.description}>
-          I'm a full-stack developer taking lessons learned from debugging distributed systems to
-          build resilient applications. I enjoy writing code to solve real problems from
-          <strong className="text-primary"> Rails monoliths</strong> to
-          <strong className="text-primary"> React tooling</strong> and I've optimized workflows that
-          saved teams 21+ hours weekly.
+          I'm a full-stack developer thats optimized workflows and saved teams
+          <strong className="text-primary"> 21+ hours weekly. </strong>I build efficient, reliable
+          software that solves complex real-world problems. Ready to see what I can do?
         </p>
 
         <div className={styles.actions}>
-          <Button variant="primary" href="/Walter_Mendoza_Resume.pdf" target="_blank">
-            Download Resume
+          <Button variant="primary" href="#projects">
+            View My Work
           </Button>
-          <Button variant="secondary" href="#projects">
-            Check out my projects ↓
+          <Button variant="secondary" href="/Walter_Mendoza_Resume.pdf" target="_blank">
+            Download Resume
           </Button>
         </div>
       </div>

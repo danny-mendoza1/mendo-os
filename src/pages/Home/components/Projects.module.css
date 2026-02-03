@@ -80,17 +80,44 @@
   border: 1px solid hsl(var(--color-primary) / 0.2);
 }
 
-.arrow {
-  color: hsl(var(--color-primary));
-  font-size: 1.25rem;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: all var(--transition-base);
+.viewDetails {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: linear-gradient(
+    90deg,
+    hsl(174 72% 50%),
+    hsl(174 72% 65%),
+    hsl(262 83% 70%),
+    hsl(174 72% 65%),
+    hsl(174 72% 50%)
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+  transition: transform var(--transition-base);
 }
 
-.projectCard:hover .arrow {
-  opacity: 1;
-  transform: translateX(0);
+.arrowLarge {
+  font-size: 1.25rem;
+}
+
+.projectCard:hover .viewDetails {
+  animation-direction: reverse;
+  transform: translateX(2px);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
 
 .disabledCard {
@@ -106,9 +133,6 @@
   border-color: hsl(var(--color-border));
 }
 
-.disabledCard:hover .arrow {
-  opacity: 0;
-}
 
 .badge {
   display: inline-block;
@@ -124,3 +148,4 @@
   border: 1px solid hsl(var(--color-border));
   margin-left: auto;
 }
+
