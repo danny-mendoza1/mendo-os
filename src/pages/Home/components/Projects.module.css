@@ -63,26 +63,61 @@
   margin-top: auto;
 }
 
-.techStack {
+.tags {
   display: flex;
-  gap: var(--spacing-2);
   flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-top: auto;
+}
+
+.tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: hsl(var(--color-muted-foreground));
-}
-
-.arrow {
+  padding: var(--spacing-1) var(--spacing-3);
+  background-color: hsl(var(--color-primary) / 0.1);
   color: hsl(var(--color-primary));
-  font-size: 1.25rem;
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: all var(--transition-base);
+  border-radius: var(--radius-full);
+  border: 1px solid hsl(var(--color-primary) / 0.2);
 }
 
-.projectCard:hover .arrow {
-  opacity: 1;
-  transform: translateX(0);
+.viewDetails {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: linear-gradient(
+    90deg,
+    hsl(174 72% 50%),
+    hsl(174 72% 65%),
+    hsl(262 83% 70%),
+    hsl(174 72% 65%),
+    hsl(174 72% 50%)
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+  transition: transform var(--transition-base);
+}
+
+.arrowLarge {
+  font-size: 1.25rem;
+}
+
+.projectCard:hover .viewDetails {
+  animation-direction: reverse;
+  transform: translateX(2px);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
 
 .disabledCard {
@@ -96,10 +131,6 @@
   transform: none;
   box-shadow: none;
   border-color: hsl(var(--color-border));
-}
-
-.disabledCard:hover .arrow {
-  opacity: 0;
 }
 
 .badge {
