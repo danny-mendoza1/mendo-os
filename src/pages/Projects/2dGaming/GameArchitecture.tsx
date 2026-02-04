@@ -182,7 +182,7 @@ export function GameArchitecture() {
         <p className="text-center mt-4 text-muted-foreground text-sm flex justify-center items-center gap-2 flex-wrap">
           <Gamepad2 size={16} />
           <span>
-            <strong>Controls:</strong> Use <kbd>WASD</kbd> to move, <kbd>"Z"</kbd> to attack.
+            <strong>Controls:</strong> Use <kbd>Arrow Keys</kbd> to move, <kbd>"Z"</kbd> to attack.
             <span className={styles.mobileOnly}>
               {" "}
               Touch controls may not work on mobile devices.
