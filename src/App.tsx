@@ -9,6 +9,11 @@ const FinancialTool = lazy(() =>
     default: module.FinancialTool,
   }))
 );
+const GameArchitecture = lazy(() =>
+  import("./pages/Projects/2dGaming/GameArchitecture").then((module) => ({
+    default: module.GameArchitecture,
+  }))
+);
 
 // Loading fallback component
 function PageLoader() {
@@ -56,6 +61,14 @@ function App() {
           element={
             <Suspense fallback={<PageLoader />}>
               <FinancialTool />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/projects/2d-game"
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <GameArchitecture />
             </Suspense>
           }
         />

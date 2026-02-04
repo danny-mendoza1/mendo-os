@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { scrollToSelector } from "../utils/scrollTo";
 
 export function useScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -9,18 +10,7 @@ export function useScrollToTop() {
     if (hash) {
       // Small delay to ensure DOM is fully rendered
       setTimeout(() => {
-        const element = document.querySelector(hash);
-        if (element) {
-          // Account for sticky header height (adjust if header height changes)
-          const headerOffset = 80;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
+        scrollToSelector(hash);
       }, 0);
     } else {
       // No hash, scroll to top

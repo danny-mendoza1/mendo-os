@@ -1,0 +1,206 @@
+/* IDE Window Styles */
+.ideWindow {
+  background: hsl(var(--color-card));
+  border: 1px solid hsl(var(--color-border));
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: var(--spacing-8) 0;
+}
+
+.ideTabBar {
+  background: hsl(var(--color-muted));
+  border-bottom: 1px solid hsl(var(--color-border));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--spacing-2);
+  min-height: 42px;
+}
+
+.ideTabs {
+  display: flex;
+  gap: 2px;
+  flex: 1;
+}
+
+.ideTab {
+  background: transparent;
+  border: none;
+  padding: var(--spacing-2) var(--spacing-4);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: hsl(var(--color-muted-foreground));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.ideTab:hover {
+  background: hsl(var(--color-card) / 0.5);
+  color: hsl(var(--color-foreground));
+}
+
+.ideTab span {
+  white-space: nowrap;
+}
+
+.ideTabActive {
+  background: hsl(var(--color-card));
+  color: hsl(var(--color-foreground));
+  font-weight: 500;
+}
+
+.ideTabActive::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: hsl(var(--color-primary));
+}
+
+.splitViewButton {
+  background: transparent;
+  border: 1px solid hsl(var(--color-border));
+  padding: var(--spacing-2) var(--spacing-3);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: hsl(var(--color-muted-foreground));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  margin-left: var(--spacing-2);
+}
+
+.splitViewButton:hover {
+  background: hsl(var(--color-card));
+  color: hsl(var(--color-foreground));
+  border-color: hsl(var(--color-primary) / 0.5);
+}
+
+.splitViewActive {
+  background: hsl(var(--color-primary) / 0.1);
+  color: hsl(var(--color-primary));
+  border-color: hsl(var(--color-primary));
+}
+
+.splitViewText {
+  display: inline;
+}
+
+.ideContent {
+  background: #0f172a;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.ideContentSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: hsl(var(--color-border));
+}
+
+.idePane {
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.idePaneHeader {
+  background: hsl(var(--color-muted) / 0.3);
+  padding: var(--spacing-2) var(--spacing-4);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: hsl(var(--color-muted-foreground));
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border-bottom: 1px solid hsl(var(--color-border) / 0.5);
+}
+
+.codeBlock {
+  background: #0f172a;
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  border: 1px solid hsl(var(--color-border));
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.codeBlock pre {
+  margin: 0;
+  width: 100%;
+}
+
+.idePane .codeBlock {
+  border: none;
+  border-radius: 0;
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .ideTabBar {
+    padding: 0 var(--spacing-1);
+  }
+
+  .ideTab {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: 0.7rem;
+  }
+
+  .ideTab span {
+    display: none; /* Hide file names on mobile, show only icons */
+  }
+
+  .splitViewButton {
+    padding: var(--spacing-2);
+  }
+
+  .splitViewText {
+    display: none; /* Hide "Compare" text on mobile */
+  }
+
+  .ideContent {
+    height: 400px; /* Fixed height on mobile */
+  }
+
+  .ideContentSplit {
+    grid-template-columns: 1fr; /* Stack panes vertically on mobile */
+  }
+
+  .idePane .codeBlock {
+    font-size: 0.7rem;
+  }
+
+  .idePaneHeader {
+    font-size: 0.7rem;
+    padding: var(--spacing-2) var(--spacing-3);
+  }
+
+  .codeBlock {
+    font-size: 0.75rem;
+    padding: var(--spacing-4);
+    -webkit-overflow-scrolling: touch;
+  }
+}
