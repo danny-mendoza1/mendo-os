@@ -177,7 +177,7 @@ for (const bill of billsRecords) {
               <span>CONSTRAINT</span>
               <span className={styles.adrStatus}>SAFETY</span>
             </div>
-            <h3 className={styles.adrTitle}>Content Security Policy</h3>
+            <h3 className={styles.adrTitle}>Strict CSP</h3>
             <p className="text-sm text-muted-foreground">
               To prevent XSS attacks from malicious CSV files, I learned how to configure strict CSP
               headers that block all external scripts and analytics trackers.

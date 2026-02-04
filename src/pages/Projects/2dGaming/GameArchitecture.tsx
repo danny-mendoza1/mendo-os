@@ -72,11 +72,11 @@ export function GameArchitecture() {
         </p>
 
         <p className={styles.textBlock}>
-          Then I learned about <strong>Finite State Machines (FSM)</strong>. In an FSM, only one
-          state can be active at a time. I suddenly realized this pattern mirrors a{" "}
-          <strong className="text-primary">Redux reducer</strong>: you dispatch an action, exit the
-          old state, and enter the new one. Explicit state transitions prevent bugs caused by
-          overlapping flags.
+          Then I learned about <strong className="text-primary">Finite State Machines (FSM)</strong>
+          . In an FSM, only one state can be active at a time. I suddenly realized this pattern
+          mirrors a <strong className="text-primary">Redux reducer</strong>: you dispatch an action,
+          exit the old state, and enter the new one. Explicit state transitions prevent bugs caused
+          by overlapping flags.
         </p>
 
         <IDEWindow
@@ -90,8 +90,8 @@ export function GameArchitecture() {
           <Lightbulb size={20} style={{ flexShrink: 0, marginTop: "0.2rem" }} />
           <span>
             <strong>Key Takeaway:</strong> Explicit state prevents bugs. Whether you're managing a
-            player character or a shopping cart, you want mutually exclusive states—not a boolean
-            maze.
+            player character or a shopping cart, you want mutually exclusive states instead of
+            boolean chaos.
           </span>
         </p>
       </section>
@@ -103,20 +103,18 @@ export function GameArchitecture() {
         </h2>
 
         <p className={styles.textBlock}>
-          <strong>The Concept:</strong> I needed unrelated objects to communicate—like a Treasure
-          Chest opening when the Player presses a button—without hard-coding references.
+          <strong>The Concept:</strong> I needed unrelated objects to communicate, i.e. a Treasure
+          Chest opening when the Player presses a button, without hard-coding references.
           <strong>The Problem:</strong> Naive "Global Listeners" waste resources. If every object
           listens to every event constantly, performance tanks.
         </p>
 
         <p className={styles.textBlock}>
-          The solution was a <strong>Conditional Observer</strong>. My objects only "connect" to
-          signals when relevant (e.g., when the player is nearby). This mirrors{" "}
-          <strong>useEffect cleanup</strong>
-          in React: you subscribe to an event, handle it, and—crucially—<strong>
-            unsubscribe
-          </strong>{" "}
-          when the condition changes to prevent memory leaks.
+          The solution was a <strong className="text-primary">Conditional Observer</strong>. My
+          objects only "connect" to signals when relevant (e.g., when the player is nearby). This
+          mirrors <strong className="text-primary">useEffect cleanup</strong> in React: you
+          subscribe to an event, handle it, and<strong> unsubscribe</strong> when the condition
+          changes to prevent memory leaks.
         </p>
 
         <IDEWindow
