@@ -83,7 +83,7 @@ export const projects: ProjectItem[] = [
     tagline: "Hobby learning into design patterns",
     description:
       "A project that started for fun that turned into a class on design and architecture patterns",
-    techStack: ["Godot 4.3", "GDScript",],
+    techStack: ["Godot 4.3", "GDScript"],
     featured: true,
     internalRoute: "/projects/2d-game",
   },

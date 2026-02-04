@@ -11,12 +11,7 @@ interface IDEWindowProps {
 
 type ViewMode = "godot" | "react" | "split";
 
-export function IDEWindow({
-  godotCode,
-  reactCode,
-  godotFileName,
-  reactFileName,
-}: IDEWindowProps) {
+export function IDEWindow({ godotCode, reactCode, godotFileName, reactFileName }: IDEWindowProps) {
   const [viewMode, setViewMode] = useState<ViewMode>("react");
   const [isSplitView, setIsSplitView] = useState(false);
 
@@ -55,9 +50,7 @@ export function IDEWindow({
           </button>
         </div>
         <button
-          className={`${styles.splitViewButton} ${
-            isSplitView ? styles.splitViewActive : ""
-          }`}
+          className={`${styles.splitViewButton} ${isSplitView ? styles.splitViewActive : ""}`}
           onClick={toggleSplitView}
           title="Toggle split view"
         >
@@ -67,11 +60,7 @@ export function IDEWindow({
       </div>
 
       {/* Code Content */}
-      <div
-        className={`${styles.ideContent} ${
-          isSplitView ? styles.ideContentSplit : ""
-        }`}
-      >
+      <div className={`${styles.ideContent} ${isSplitView ? styles.ideContentSplit : ""}`}>
         {isSplitView ? (
           <>
             <div className={styles.idePane}>
