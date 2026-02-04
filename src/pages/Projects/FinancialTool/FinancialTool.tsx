@@ -1,34 +1,41 @@
 import { Card } from "../../../components/Card/Card";
 import { Button } from "../../../components/Button/Button";
-import { GitHubIcon, PipelineIcon, TestIcon } from "../../../components/Icons";
+import { Github, CircleCheckBig, FlaskConical, ExternalLink } from "lucide-react";
+import { scrollToElement } from "../../../utils/scrollTo";
 import styles from "./FinancialTool.module.css";
 
 export function FinancialTool() {
+  const scrollToDemo = () => {
+    scrollToElement("live-demo");
+  };
+
   return (
     <div className={`${styles.container} animate-fade-in-up`}>
       <header className={styles.header}>
-        <div className={styles.headerTop}>
-          <div className={styles.headerContent}>
-            <div className={styles.tagline}>FEATURED CASE STUDY</div>
-            <h1 className={styles.title}>Financial Data Reconciliation Engine</h1>
-          </div>
-
-          <Button
-            variant="outline"
-            href="https://github.com/danny-mendoza1/duplicate-accounting-finder"
-            target="_blank"
-            className={styles.githubButton}
-          >
-            <GitHubIcon />
-            <span>View Source & Docs</span>
-          </Button>
-        </div>
+        <div className={styles.tagline}>FEATURED CASE STUDY</div>
+        <h1 className={styles.title}>Financial Data Reconciliation Engine</h1>
 
         <p className={styles.summary}>
           A client-side tool that automates the detection of duplicate accounting entries. Born from
           a need to reduce manual data entry, this project became my crash course in
           <strong> algorithmic efficiency</strong> and <strong>browser memory management</strong>.
         </p>
+
+        <div className={styles.headerButtons}>
+          <Button variant="outline" onClick={scrollToDemo} className={styles.demoButton}>
+            <ExternalLink size={20} />
+            <span>View Live Demo</span>
+          </Button>
+          <Button
+            variant="outline"
+            href="https://github.com/danny-mendoza1/duplicate-accounting-finder"
+            target="_blank"
+            className={styles.githubButton}
+          >
+            <Github />
+            <span>View Source & Docs</span>
+          </Button>
+        </div>
 
         <div className={styles.metricsGrid}>
           <div className={styles.metric}>
@@ -45,33 +52,6 @@ export function FinancialTool() {
           </div>
         </div>
       </header>
-
-      <section className={styles.demoSection}>
-        <Card className="p-0 overflow-hidden border-none">
-          <div className={styles.browserHeader}>
-            <div className={styles.dots}>
-              <div className={styles.dot} style={{ background: "#ff5f56" }} />
-              <div className={styles.dot} style={{ background: "#ffbd2e" }} />
-              <div className={styles.dot} style={{ background: "#27c93f" }} />
-            </div>
-            <div className={styles.urlBar}>
-              danny-mendoza1.github.io/duplicate-accounting-finder
-            </div>
-          </div>
-          <iframe
-            src="https://danny-mendoza1.github.io/duplicate-accounting-finder/"
-            title="Live Tool Demo"
-            className={styles.iframe}
-          />
-        </Card>
-        <p className="text-center mt-4 text-muted-foreground text-sm flex justify-center items-center gap-2">
-          <span>⚠️</span>
-          <span>
-            <strong>Privacy Note:</strong> This application runs entirely in your browser. No data
-            is uploaded.
-          </span>
-        </p>
-      </section>
 
       <section className={styles.contentBlock}>
         <h2 className={styles.sectionTitle}>
@@ -221,7 +201,7 @@ for (const bill of billsRecords) {
           <Card className={styles.ciCard}>
             <div className={styles.ciHeader}>
               <div className={styles.iconWrapper}>
-                <PipelineIcon className="text-green-500" />
+                <CircleCheckBig className="text-green-500" />
               </div>
               <h3>GitHub Actions Pipeline</h3>
             </div>
@@ -258,7 +238,7 @@ for (const bill of billsRecords) {
           <Card className={styles.ciCard}>
             <div className={styles.ciHeader}>
               <div className={styles.iconWrapper}>
-                <TestIcon className="text-blue-500" />
+                <FlaskConical className="text-blue-500" />
               </div>
               <h3>Testing Strategy</h3>
             </div>
@@ -284,6 +264,42 @@ for (const bill of billsRecords) {
             </ul>
           </Card>
         </div>
+      </section>
+
+      <section id="live-demo" className={styles.demoSection}>
+        <h2 className={styles.sectionTitle}>
+          <span className="text-primary font-mono text-xl">04.</span>
+          Try It Yourself
+        </h2>
+        <p className={styles.textBlock}>
+          The tool is fully functional and deployed. Upload your own CSV files to see the
+          reconciliation engine in action.
+        </p>
+
+        <Card className="p-0 overflow-hidden border-none">
+          <div className={styles.browserHeader}>
+            <div className={styles.dots}>
+              <div className={styles.dot} style={{ background: "#ff5f56" }} />
+              <div className={styles.dot} style={{ background: "#ffbd2e" }} />
+              <div className={styles.dot} style={{ background: "#27c93f" }} />
+            </div>
+            <div className={styles.urlBar}>
+              danny-mendoza1.github.io/duplicate-accounting-finder
+            </div>
+          </div>
+          <iframe
+            src="https://danny-mendoza1.github.io/duplicate-accounting-finder/"
+            title="Live Tool Demo"
+            className={styles.iframe}
+          />
+        </Card>
+        <p className="text-center mt-4 text-muted-foreground text-sm flex justify-center items-center gap-2">
+          <span>⚠️</span>
+          <span>
+            <strong>Privacy Note:</strong> This application runs entirely in your browser. No data
+            is uploaded.
+          </span>
+        </p>
       </section>
     </div>
   );

@@ -78,14 +78,13 @@ export const projects: ProjectItem[] = [
     internalRoute: "/projects/financial-tool",
   },
   {
-    id: "mendo-os",
-    title: "Mendo-OS",
-    tagline: "Web-based Operating System Simulation",
+    id: "2d-game",
+    title: "2D Action RPG",
+    tagline: "Hobby learning into design patterns",
     description:
-      "A complex desktop environment simulation featuring window management, a file system, and process tracking running entirely in the browser.",
-    techStack: ["React", "Redux", "Framer Motion"],
+      "A project that started for fun that turned into a class on design and architecture patterns",
+    techStack: ["Godot 4.3", "GDScript",],
     featured: true,
-    internalRoute: "/os",
-    comingSoon: true,
+    internalRoute: "/projects/2d-game",
   },
 ];

@@ -10,23 +10,6 @@
   margin-bottom: var(--spacing-12);
 }
 
-.headerTop {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--spacing-6);
-  margin-bottom: var(--spacing-6);
-}
-
-.headerContent {
-  flex: 1;
-}
-
-.githubButton {
-  flex-shrink: 0;
-  white-space: nowrap;
-}
-
 .tagline {
   color: hsl(var(--color-primary));
   font-family: var(--font-mono);
@@ -39,7 +22,7 @@
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-8);
   background: linear-gradient(135deg, hsl(var(--color-foreground)), hsl(var(--color-primary)));
   -webkit-background-clip: text;
   background-clip: text;
@@ -49,8 +32,21 @@
 .summary {
   font-size: 1.25rem;
   color: hsl(var(--color-foreground) / 0.85);
-  max-width: 700px;
+  max-width: 900px;
   line-height: 1.7;
+  margin-bottom: var(--spacing-8);
+}
+
+.headerButtons {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-8);
+}
+
+.demoButton,
+.githubButton {
+  white-space: nowrap;
 }
 
 .metricsGrid {
@@ -356,23 +352,24 @@ li.stepItem > span:last-child::before {
   }
 
   /* Header Section */
-  .headerTop {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--spacing-4);
-  }
-
-  .githubButton {
-    width: 100%;
-    justify-content: center;
-  }
-
   .title {
     font-size: 1.75rem;
   }
 
   .summary {
     font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .headerButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .demoButton,
+  .githubButton {
+    width: 100%;
+    justify-content: center;
   }
 
   /* Metrics Grid - 2 columns then 1 */
