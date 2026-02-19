@@ -1,14 +1,13 @@
 import { personalInfo } from "../../../data/resume";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "../../../components/Button/Button";
-import homeStyles from "../Home.module.css";
 import styles from "./Contact.module.css";
 
 export function Contact() {
   return (
     <section id="contact" className={`${styles.container} animate-fade-in-up delay-400`}>
-      <h2 className={homeStyles.sectionTitle}>
-        <span className="text-primary font-mono text-lg">04.</span> Get In Touch
+      <h2 className={styles.sectionTitle}>
+        Get In Touch
       </h2>
 
       <div className={styles.content}>

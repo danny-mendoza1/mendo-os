@@ -6,7 +6,7 @@
 }
 
 .sectionTitle {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: hsl(var(--color-foreground));
   margin-bottom: var(--spacing-8);

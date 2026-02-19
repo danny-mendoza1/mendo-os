@@ -2,6 +2,23 @@
   scroll-margin-top: 100px;
 }
 
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: hsl(var(--color-foreground));
+  margin-bottom: var(--spacing-8);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.sectionTitle::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, hsl(var(--color-border)), transparent);
+}
+
 .grid {
   display: grid;
   /* Creates columns that are at least 350px wide, but fits as many as possible per row. */

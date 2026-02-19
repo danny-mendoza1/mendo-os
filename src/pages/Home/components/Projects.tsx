@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { projects } from "../../../data/resume";
 import { Card } from "../../../components/Card/Card";
-import homeStyles from "../Home.module.css";
 import styles from "./Projects.module.css";
 
 export function Projects() {
@@ -15,8 +14,8 @@ export function Projects() {
 
   return (
     <section id="projects" className={`${styles.container} animate-fade-in-up delay-300`}>
-      <h2 className={homeStyles.sectionTitle}>
-        <span className="text-primary font-mono text-lg">03.</span> Featured Projects
+      <h2 className={styles.sectionTitle}>
+        Featured Projects
       </h2>
 
       <div className={styles.grid}>

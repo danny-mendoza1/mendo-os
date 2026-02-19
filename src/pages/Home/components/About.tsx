@@ -14,7 +14,7 @@ export function About() {
           <span className={styles.highlight}>The Forensic Debugger.</span>
         </h1>
         <p className={styles.description}>
-          I'm a full-stack developer that's optimized workflows and saved teams
+          I'm a full-stack developer who optimizes workflows and has saved teams
           <strong className="text-primary"> 21+ hours weekly. </strong>I build efficient, reliable
           software that solves complex real-world problems. Ready to see what I can do?
         </p>

@@ -26,7 +26,7 @@ export const experience: ExperienceItem[] = [
       "Initiated and implemented a Zendesk to LLM ticket summarization pipeline with parallel processing optimizations.",
       "Led root cause analysis for a distributed authentication outage (401 errors), identifying distinct failure modes across multiple tenant configurations.",
       "Served as technical authority for API integration disputes, reverse-engineering undocumented HMAC signatures for enterprise clients.",
-      "Elevated the team's technical baseline by mentoring peers on API debugging workflows, introducing shared Postman collections and a custom JSON sanitizer to accurately reproduce production bugs.",
+      "Elevated the team's technical baseline by mentoring peers on API debugging workflows; introducing shared Postman collections and the custom JSON sanitizer to accurately reproduce production bugs.",
     ],
     techStack: ["Ruby on Rails", "Python", "Node.js", "LLM Integration"],
   },
@@ -39,7 +39,7 @@ export const experience: ExperienceItem[] = [
     endDate: "Jul 2025",
     description: "Built high-impact internal tools used daily by Support and Engineering.",
     highlights: [
-      "Built a JSON/PII sanitization tool that reduced payload preparation from 45 mins to <1 min.",
+      "Created a JSON/PII sanitization tool that reduced payload preparation from 45 mins to <1 min.",
       "Developed a Node.js attachment reconciliation script capable of validating thousands of document records in seconds.",
       "Identified systemic rate-limit defects by analyzing New Relic throughput, proving limits were not scoped per-client.",
       "Designed and implemented Opsgenie on-call automation, replacing manual paging with structured escalation.",
@@ -56,7 +56,7 @@ export const experience: ExperienceItem[] = [
     description:
       "Implemented dynamic pricing algorithms and visualization tools for manufacturing clients.",
     highlights: [
-      "Engineered dynamic pricing engines that ingest real-time commodity costs to calculate live margins.",
+      "Constructed dynamic pricing engines that ingest real-time commodity costs to calculate live margins.",
       "Owned resolution of a critical timezone synchronization defect; standardized UTC/Local date handling across the stack.",
       "Enhanced the 'Mass Update' feature to handle large datasets in a single transaction, optimizing backend logic to ensure data integrity.",
       "Managed complex SQL migrations during schema evolution, maintaining zero-downtime deployments.",
