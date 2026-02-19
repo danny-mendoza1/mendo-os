@@ -6,9 +6,7 @@ import styles from "./Contact.module.css";
 export function Contact() {
   return (
     <section id="contact" className={`${styles.container} animate-fade-in-up delay-400`}>
-      <h2 className={styles.sectionTitle}>
-        Get In Touch
-      </h2>
+      <h2 className={styles.sectionTitle}>Get In Touch</h2>
 
       <div className={styles.content}>
         <p className={styles.description}>

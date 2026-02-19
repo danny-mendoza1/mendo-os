@@ -14,9 +14,7 @@ export function Projects() {
 
   return (
     <section id="projects" className={`${styles.container} animate-fade-in-up delay-300`}>
-      <h2 className={styles.sectionTitle}>
-        Featured Projects
-      </h2>
+      <h2 className={styles.sectionTitle}>Featured Projects</h2>
 
       <div className={styles.grid}>
         {projects.map((project) => (

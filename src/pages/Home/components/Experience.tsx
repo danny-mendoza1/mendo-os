@@ -5,9 +5,7 @@ import { Card } from "../../../components/Card/Card";
 export function Experience() {
   return (
     <section id="experience" className="animate-fade-in-up delay-200">
-      <h2 className={styles.sectionTitle}>
-        Experience
-      </h2>
+      <h2 className={styles.sectionTitle}>Experience</h2>
 
       <div className={styles.list}>
         {experience.map((job) => (
