@@ -63,7 +63,7 @@ export function FinancialTool() {
           <strong>The Mistake:</strong> My initial implementation used a standard nested loop to
           compare rows. It worked fine for 50 rows, but when I tested it with a real client dataset
           (5,000+ rows),
-          <strong>the browser completely froze</strong>.
+          <strong> the browser completely froze</strong>.
         </p>
         <p className={styles.textBlock}>
           I realized that comparing every bank transaction against every accounting record created

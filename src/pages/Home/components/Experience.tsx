@@ -1,14 +1,11 @@
 import styles from "./Experience.module.css";
-import homeStyles from "../../../pages/Home/Home.module.css";
 import { experience } from "../../../data/resume";
 import { Card } from "../../../components/Card/Card";
 
 export function Experience() {
   return (
     <section id="experience" className="animate-fade-in-up delay-200">
-      <h2 className={homeStyles.sectionTitle}>
-        <span className="text-primary font-mono text-lg">02.</span> Experience
-      </h2>
+      <h2 className={styles.sectionTitle}>Experience</h2>
 
       <div className={styles.list}>
         {experience.map((job) => (
