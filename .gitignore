@@ -39,3 +39,4 @@ NOTES.md
 *.njsproj
 *.sln
 *.sw?
+.editorconfig
