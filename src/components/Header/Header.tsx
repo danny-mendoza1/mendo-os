@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useLocation, Link } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
 import styles from "./Header.module.css";
 
 export function Header() {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
 
   // Close menu when clicking a link
   const handleLinkClick = () => {
@@ -27,25 +30,62 @@ export function Header() {
     };
   }, [isMenuOpen]);
 
-  const navLinks = [
-    { href: "#experience", label: "Experience" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
-  ];
+  // Close dropdown when route changes
+  useEffect(() => {
+    setIsProjectsDropdownOpen(false);
+  }, [location.pathname]);
+
+  const isFinancialTool = location.pathname === "/projects/financial-tool";
+  const is2DGame = location.pathname === "/projects/2d-game";
+  const isProjectPage = isFinancialTool || is2DGame;
 
   return (
     <header>
       <div className={styles.toolbar}>
-        <a href="/" className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           MENDOZA.DEV
-        </a>
+        </Link>
 
         <nav className={styles.desktopNav}>
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className={styles.navLink}>
-              {link.label}
+          {!isProjectPage && (
+            <a href="/#experience" className={styles.navLink}>
+              Experience
             </a>
-          ))}
+          )}
+
+          {isProjectPage ? (
+            <div className={styles.dropdown}>
+              <button
+                className={styles.dropdownButton}
+                onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
+              >
+                Projects
+                <ChevronDown size={16} />
+              </button>
+              {isProjectsDropdownOpen && (
+                <div className={styles.dropdownMenu}>
+                  {isFinancialTool && (
+                    <Link to="/projects/2d-game" className={styles.dropdownItem}>
+                      2D Action RPG
+                    </Link>
+                  )}
+                  {is2DGame && (
+                    <Link to="/projects/financial-tool" className={styles.dropdownItem}>
+                      Financial Tool
+                    </Link>
+                  )}
+                </div>
+              )}
+            </div>
+          ) : (
+            <a href="/#projects" className={styles.navLink}>
+              Projects
+            </a>
+          )}
+
+          <a href="#contact" className={styles.navLink}>
+            Contact
+          </a>
         </nav>
 
         <button
@@ -59,16 +99,42 @@ export function Header() {
       </div>
 
       <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""}`}>
-        {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className={styles.mobileNavLink}
-            onClick={handleLinkClick}
-          >
-            {link.label}
+        {!isProjectPage && (
+          <a href="/#experience" className={styles.mobileNavLink} onClick={handleLinkClick}>
+            Experience
           </a>
-        ))}
+        )}
+
+        {isProjectPage ? (
+          <>
+            {isFinancialTool && (
+              <Link
+                to="/projects/2d-game"
+                className={styles.mobileNavLink}
+                onClick={handleLinkClick}
+              >
+                2D Action RPG
+              </Link>
+            )}
+            {is2DGame && (
+              <Link
+                to="/projects/financial-tool"
+                className={styles.mobileNavLink}
+                onClick={handleLinkClick}
+              >
+                Financial Tool
+              </Link>
+            )}
+          </>
+        ) : (
+          <a href="/#projects" className={styles.mobileNavLink} onClick={handleLinkClick}>
+            Projects
+          </a>
+        )}
+
+        <a href="#contact" className={styles.mobileNavLink} onClick={handleLinkClick}>
+          Contact
+        </a>
       </nav>
     </header>
   );

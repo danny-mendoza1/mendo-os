@@ -1,5 +1,6 @@
 import { Card } from "../../../components/Card/Card";
 import { Button } from "../../../components/Button/Button";
+import { Contact } from "../../Home/components/Contact";
 import { Github, CircleCheckBig, FlaskConical, ExternalLink } from "lucide-react";
 import { scrollToElement } from "../../../utils/scrollTo";
 import styles from "./FinancialTool.module.css";
@@ -302,6 +303,8 @@ for (const bill of billsRecords) {
           </span>
         </p>
       </section>
+
+      <Contact />
     </div>
   );
 }

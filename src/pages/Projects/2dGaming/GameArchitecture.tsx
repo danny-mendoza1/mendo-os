@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useGodotBridge } from "../../../hooks/useGodotBridge";
 import { Card } from "../../../components/Card/Card";
 import { Button } from "../../../components/Button/Button";
+import { Contact } from "../../Home/components/Contact";
 import { IDEWindow } from "../../../components/IDEWindow/IDEWindow";
 import { Github, Gamepad2, Lightbulb, Zap, Play } from "lucide-react";
 import { scrollToElement } from "../../../utils/scrollTo";
@@ -195,6 +196,8 @@ export function GameArchitecture() {
           </span>
         </p>
       </section>
+
+      <Contact />
     </div>
   );
 }
