@@ -1,4 +1,3 @@
-
 export function scrollTo(target: string | HTMLElement, headerOffset: number = 80): void {
   let element: Element | null = null;
 
