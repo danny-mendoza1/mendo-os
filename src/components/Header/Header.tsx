@@ -30,11 +30,6 @@ export function Header() {
     };
   }, [isMenuOpen]);
 
-  // Close dropdown when route changes
-  useEffect(() => {
-    setIsProjectsDropdownOpen(false);
-  }, [location.pathname]);
-
   const isFinancialTool = location.pathname === "/projects/financial-tool";
   const is2DGame = location.pathname === "/projects/2d-game";
   const isProjectPage = isFinancialTool || is2DGame;
@@ -65,12 +60,20 @@ export function Header() {
               {isProjectsDropdownOpen && (
                 <div className={styles.dropdownMenu}>
                   {isFinancialTool && (
-                    <Link to="/projects/2d-game" className={styles.dropdownItem}>
+                    <Link
+                      to="/projects/2d-game"
+                      className={styles.dropdownItem}
+                      onClick={() => setIsProjectsDropdownOpen(false)}
+                    >
                       2D Action RPG
                     </Link>
                   )}
                   {is2DGame && (
-                    <Link to="/projects/financial-tool" className={styles.dropdownItem}>
+                    <Link
+                      to="/projects/financial-tool"
+                      className={styles.dropdownItem}
+                      onClick={() => setIsProjectsDropdownOpen(false)}
+                    >
                       Financial Tool
                     </Link>
                   )}
