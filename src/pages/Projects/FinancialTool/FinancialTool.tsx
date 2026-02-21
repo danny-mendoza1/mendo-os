@@ -1,5 +1,6 @@
 import { Card } from "../../../components/Card/Card";
 import { Button } from "../../../components/Button/Button";
+import { Contact } from "../../Home/components/Contact";
 import { Github, CircleCheckBig, FlaskConical, ExternalLink } from "lucide-react";
 import { scrollToElement } from "../../../utils/scrollTo";
 import styles from "./FinancialTool.module.css";
@@ -43,7 +44,7 @@ export function FinancialTool() {
             <span className={styles.metricLabel}>Saved Weekly</span>
           </div>
           <div className={styles.metric}>
-            <span className={styles.metricValue}>O(N)</span>
+            <span className={styles.metricValue}>O(N+M)</span>
             <span className={styles.metricLabel}>Time Complexity</span>
           </div>
           <div className={styles.metric}>
@@ -66,8 +67,9 @@ export function FinancialTool() {
           <strong> the browser completely froze</strong>.
         </p>
         <p className={styles.textBlock}>
-          I realized that comparing every bank transaction against every accounting record created
-          an exponential workload (25 million checks). I needed a way to look up records instantly.
+          I realized that comparing every bank transaction against every accounting record created a
+          quadratic workload—O(N×M) complexity meant 25 million comparisons for just 5,000 rows. I
+          needed a way to look up records instantly.
         </p>
 
         <div className={styles.algoVisual}>
@@ -107,26 +109,27 @@ export function FinancialTool() {
 
         <p className={styles.textBlock}>
           <strong>The Lesson:</strong> Through research and iteration, I learned about{" "}
-          <strong>Big O notation</strong> and Hash Maps. By pre-indexing the data into a Map
-          (Dictionary), I could find matches in a single pass.
+          <strong>Big O notation</strong> and Hash Maps. By pre-indexing one dataset into a Map
+          (Dictionary) in O(N) time, then looking up each item from the second dataset in O(M) time,
+          I achieved O(N+M) linear complexity instead of O(N×M) quadratic.
         </p>
 
         <div className={styles.codeBlock}>
           <pre>{`// src/core/grouping.ts
 
-// 1. Create the dictionary
+// 1. Create the dictionary (O(N) where N = buildiumRecords.length)
 const buildiumIndex = new Map<string, CsvRecord[]>();
 
-// 2. Fill it once
+// 2. Index the first dataset
 for (const record of buildiumRecords) {
   const k = keyify(record);
   if (!buildiumIndex.has(k)) buildiumIndex.set(k, []);
   buildiumIndex.get(k)!.push(record);
 }
 
-// 3. Instant Lookup
+// 3. Lookup from second dataset (O(M) where M = billsRecords.length)
 for (const bill of billsRecords) {
-  // This line is now O(1) instead of O(N)
+  // Hash map lookup is O(1), making total complexity O(N+M)
   const matches = buildiumIndex.get(keyify(bill)); 
 }`}</pre>
         </div>
@@ -291,6 +294,7 @@ for (const bill of billsRecords) {
             src="https://danny-mendoza1.github.io/duplicate-accounting-finder/"
             title="Live Tool Demo"
             className={styles.iframe}
+            sandbox="allow-scripts allow-same-origin allow-forms"
           />
         </Card>
         <p className="text-center mt-4 text-muted-foreground text-sm flex justify-center items-center gap-2">
@@ -301,6 +305,8 @@ for (const bill of billsRecords) {
           </span>
         </p>
       </section>
+
+      <Contact />
     </div>
   );
 }

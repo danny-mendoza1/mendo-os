@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
 import styles from "./Header.module.css";
 
 export function Header() {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
 
   // Close menu when clicking a link
   const handleLinkClick = () => {
@@ -26,25 +30,65 @@ export function Header() {
     };
   }, [isMenuOpen]);
 
-  const navLinks = [
-    { href: "#experience", label: "Experience" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
-  ];
+  const isFinancialTool = location.pathname === "/projects/financial-tool";
+  const is2DGame = location.pathname === "/projects/2d-game";
+  const isProjectPage = isFinancialTool || is2DGame;
 
   return (
     <header>
       <div className={styles.toolbar}>
-        <a href="/" className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           MENDOZA.DEV
-        </a>
+        </Link>
 
         <nav className={styles.desktopNav}>
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className={styles.navLink}>
-              {link.label}
+          {!isProjectPage && (
+            <a href="/#experience" className={styles.navLink}>
+              Experience
             </a>
-          ))}
+          )}
+
+          {isProjectPage ? (
+            <div className={styles.dropdown}>
+              <button
+                className={styles.dropdownButton}
+                onClick={() => setIsProjectsDropdownOpen(!isProjectsDropdownOpen)}
+              >
+                Projects
+                <ChevronDown size={16} />
+              </button>
+              {isProjectsDropdownOpen && (
+                <div className={styles.dropdownMenu}>
+                  {isFinancialTool && (
+                    <Link
+                      to="/projects/2d-game"
+                      className={styles.dropdownItem}
+                      onClick={() => setIsProjectsDropdownOpen(false)}
+                    >
+                      2D Action RPG
+                    </Link>
+                  )}
+                  {is2DGame && (
+                    <Link
+                      to="/projects/financial-tool"
+                      className={styles.dropdownItem}
+                      onClick={() => setIsProjectsDropdownOpen(false)}
+                    >
+                      Financial Tool
+                    </Link>
+                  )}
+                </div>
+              )}
+            </div>
+          ) : (
+            <a href="/#projects" className={styles.navLink}>
+              Projects
+            </a>
+          )}
+
+          <a href="#contact" className={styles.navLink}>
+            Contact
+          </a>
         </nav>
 
         <button
@@ -53,50 +97,47 @@ export function Header() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
         >
-          {isMenuOpen ? (
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          ) : (
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          )}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       <nav className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""}`}>
-        {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className={styles.mobileNavLink}
-            onClick={handleLinkClick}
-          >
-            {link.label}
+        {!isProjectPage && (
+          <a href="/#experience" className={styles.mobileNavLink} onClick={handleLinkClick}>
+            Experience
           </a>
-        ))}
+        )}
+
+        {isProjectPage ? (
+          <>
+            {isFinancialTool && (
+              <Link
+                to="/projects/2d-game"
+                className={styles.mobileNavLink}
+                onClick={handleLinkClick}
+              >
+                2D Action RPG
+              </Link>
+            )}
+            {is2DGame && (
+              <Link
+                to="/projects/financial-tool"
+                className={styles.mobileNavLink}
+                onClick={handleLinkClick}
+              >
+                Financial Tool
+              </Link>
+            )}
+          </>
+        ) : (
+          <a href="/#projects" className={styles.mobileNavLink} onClick={handleLinkClick}>
+            Projects
+          </a>
+        )}
+
+        <a href="#contact" className={styles.mobileNavLink} onClick={handleLinkClick}>
+          Contact
+        </a>
       </nav>
     </header>
   );
