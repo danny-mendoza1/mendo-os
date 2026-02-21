@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MainLayout } from "./layouts/MainLayout";
-import { Routes, Route } from "react-router-dom";
-import { useScrollToTop } from "./hooks/useScrollToTop";
 
 const Home = lazy(() => import("./pages/Home/Home").then((module) => ({ default: module.Home })));
 const FinancialTool = lazy(() =>
@@ -42,39 +41,42 @@ function PageLoader() {
   );
 }
 
-function App() {
-  useScrollToTop();
+// Create router with modern data router API
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: "projects/financial-tool",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <FinancialTool />
+          </Suspense>
+        ),
+      },
+      {
+        path: "projects/2d-game",
+        element: (
+          <Suspense fallback={<PageLoader />}>
+            <GameArchitecture />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+]);
 
-  return (
-    <Routes>
-      <Route path="/" element={<MainLayout />}>
-        <Route
-          index
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <Home />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/projects/financial-tool"
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <FinancialTool />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/projects/2d-game"
-          element={
-            <Suspense fallback={<PageLoader />}>
-              <GameArchitecture />
-            </Suspense>
-          }
-        />
-      </Route>
-    </Routes>
-  );
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;

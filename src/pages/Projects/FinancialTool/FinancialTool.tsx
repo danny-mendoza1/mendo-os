@@ -291,6 +291,7 @@ for (const bill of billsRecords) {
             src="https://danny-mendoza1.github.io/duplicate-accounting-finder/"
             title="Live Tool Demo"
             className={styles.iframe}
+            sandbox="allow-scripts allow-same-origin allow-forms"
           />
         </Card>
         <p className="text-center mt-4 text-muted-foreground text-sm flex justify-center items-center gap-2">

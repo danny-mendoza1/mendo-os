@@ -162,7 +162,7 @@ export function GameArchitecture() {
                 className={styles.iframe}
                 title="Godot Game Demo"
                 onLoad={handleIframeLoad}
-                allow="autoplay; fullscreen"
+                sandbox="allow-scripts allow-same-origin"
                 tabIndex={-1}
               />
             ) : (
